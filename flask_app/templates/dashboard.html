@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Dojo Results</title>
+</head>
+<body>
+
+  <div id="header" class="row dashboard-style">
+    <h1 class="">Coding Dojo Wall</h1>
+    <div class="info">
+      <h2 class="">Welcome, {{ user.first_name }}:</h2>
+      <a href="/sighting/dashboard" class="btn btn-primary">Add New Sighting</a>
+      <a href="/logout"><p class="btn btn-primary">Log Out</p></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <table class="table table-hover col dashboard-style">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Reported By</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      {{ user.id }}
+      <tbody>
+        {% for sighting in all_sightings %}
+          <tr>
+            <td>{{sighting.location}}</td>
+            <td>{{ user.first_name }} {{ sightings }}</td>
+            <td>
+              <a href="/sighting/{{sighting.id}}" class="btn btn-warning">View Sighting</a>
+              {% if sighting.user_id == session.user_id %}
+              <a href="/sighting/update/form/{{sighting.id}}" class="btn btn-warning">Edit</a>
+              <a href="/sighting/delete/{{sighting.id}}" class="btn btn-warning">Delete</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

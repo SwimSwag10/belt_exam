@@ -1,0 +1,76 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+  background: #f0f2f5;
+}
+.col {
+  background: #333;
+  margin: 50px auto;
+  height: fit-content;
+  padding: 50px;
+  border-radius: 5px;
+}
+.row {
+  gap: 40px;
+}
+p, h2, th, td {
+  color: white;
+}
+h1 {
+  color: gold;
+}
+select, option, input {
+  border-radius: 5px;
+  border-color: blueviolet;
+  width: 100%;
+  color: #333;
+}
+#commentbox {
+  height: 100px;
+}
+select, input {
+  margin-bottom: 20px;
+}
+a {
+  margin-top: 20px;
+}
+.user_info {
+  color: #333;
+  background: white;
+  border-radius: 5px;
+  border-width: 20px;
+  border-color: blueviolet;
+  padding: 20px 5px;
+}
+#header, .info {
+  padding: 5px 30px 0px 30px;
+  background: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info {
+  margin: 0px;
+  padding: 0px;
+  gap: 50px;
+}
+.dashboard-content {
+  margin: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.dashboard-style {
+  box-shadow: gray 0px 5px 20px;
+}
+.mb-4 {
+  background: gold;
+}
+.dashboard-style:hover {
+  background: linear-gradient(
+    45deg,
+    blueviolet,
+    navy 250%
+  );
+}

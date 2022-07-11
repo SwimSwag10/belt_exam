@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="header" class="row dashboard-style">
+    <h1 class="">Coding Dojo Wall</h1>
+    <div class="info">
+      <h2 class="">Welcome, {{ user.first_name }}:</h2>
+      <a href="/sighting/dashboard" class="btn btn-primary">Add New Sighting</a>
+      <a href="/logout"><p class="btn btn-primary">Log Out</p></a>
+    </div>
+  </div>
+
+<div class="card col-10 mx-auto my-5 col">
+    <div class="card-body">
+        <h2 class="card-title text-warning">{{sighting.location}} on {{ sighting.date_made }}</h2>
+        <p class="card-text">Description:</p>
+        <p class="card-text">{{sighting.description}}</p>
+        <p class="card-text">Number of Sasquach(es): {{ sighting.number_of }}</p>
+        <p class="card-text">Reported By: {{ user.first_name }} {{ user.last_name }}</p>
+    </div>
+</div>
+</body>
+</html>
